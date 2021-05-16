@@ -8,7 +8,16 @@ using EntityLayer;
 
 namespace BusinessLogicLayer
 {
-    class BLLUser
+    public class BLLUser
     {
+        public static int AddUserBLL(EntityUser user )
+        {
+            if (user.FirstName != null && user.LastName != null && user.Username != null && user.Email != null && user.Password != null)
+            {
+                return DalUser.AddUser(user);
+            }
+            return -1;
+        }
+
     }
 }

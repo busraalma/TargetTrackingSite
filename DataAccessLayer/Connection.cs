@@ -10,6 +10,6 @@ namespace DataAccessLayer
 {
     public class Connection
     {
-        //public static SqlConnection sqlConnection = new SqlConnection(@"");
+        public static SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DbTargetTracking;Integrated Security=True");
     }
 }
