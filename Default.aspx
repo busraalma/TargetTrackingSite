@@ -9,6 +9,15 @@
                 <div class="col-md-8">
                     <div class="col-md-12" style="background-color: #DCDCDC">
                         MAIN PAGE
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Database1ConnectionString %>" SelectCommand="SELECT [UderId], [UserName], [UserLastname] FROM [Table]"></asp:SqlDataSource>
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UderId" DataSourceID="SqlDataSource1">
+                            <Columns>
+                                <asp:BoundField DataField="UderId" HeaderText="UderId" ReadOnly="True" SortExpression="UderId" />
+                                <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
+                                <asp:BoundField DataField="UserLastname" HeaderText="UserLastname" SortExpression="UserLastname" />
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -36,18 +45,6 @@
                 </div>
             </div>
         </div>
-
-
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Database1ConnectionString %>" SelectCommand="SELECT [UderId], [UserName], [UserLastname] FROM [Table]"></asp:SqlDataSource>
-
-
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UderId" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:BoundField DataField="UderId" HeaderText="UderId" ReadOnly="True" SortExpression="UderId" />
-                <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
-                <asp:BoundField DataField="UserLastname" HeaderText="UserLastname" SortExpression="UserLastname" />
-            </Columns>
-        </asp:GridView>
 
 
     </form>
